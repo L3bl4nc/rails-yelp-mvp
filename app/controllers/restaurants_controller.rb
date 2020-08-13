@@ -9,6 +9,10 @@ class RestaurantsController < ApplicationController
 
   def new
     @restaurant = Restaurant.new
+  end
+
+  def create
+    @restaurant = Restaurant.new(params[:id])
     @restaurant.save
 
     redirect_to restaurants_path(@restaurant)
